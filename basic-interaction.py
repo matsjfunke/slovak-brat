@@ -29,5 +29,6 @@ for section in data:
         
         random_word, translation = random.choice(list(learning_topic.items()))
 
-        print(f"Random Word: {random_word}")
-        print(f"Translation: {translation}")
+        print(f"Zufälliges Wort: {random_word}")
+        user_translation = input(f"\nGebe das Wort auf slowakisch ein: ")
+        print(f"Richtig wäre: {translation} | deine Übersetzung: {user_translation}\n")
