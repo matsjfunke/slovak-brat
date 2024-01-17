@@ -1,0 +1,43 @@
+{
+    "Begrüßungen/Verabschiedungen": {
+      "Hallo": "Ahoj",
+      "Guten Tag": "Dobrý deň",
+      "Guten Abend": "Dobrý večer",
+      "Gute Nacht": "Dobrú noc",
+      "Auf Wiedersehen": "Do videnia",
+      "Tschüss": "Ahoj"
+    },
+    "Höflichkeiten": {
+      "Danke": "Ďakujem",
+      "Bitte": "Prosím",
+      "Entschuldigung": "Prepáčte"
+    },
+    "Antworten": {
+      "Ja": "Áno",
+      "Nein": "Nie",
+      "Mir geht es gut.": "Mám sa dobre.",
+      "Mir geht es schlecht.": "Mám sa zle."
+    },
+    "Fragen": {
+      "Was machst du?": "Čo robíš?",
+      "Was ist das?": "Čo to je?",
+      "Wo ist die Toilette?": "Kde je toaleta?",
+      "Wie geht es dir?": "Ako sa máš?"
+    },
+    "Personalpronomen": {
+      "Ich": "Ja",
+      "Du": "Ty",
+      "Er/Sie/Es": "On/Ona/Ono",
+      "Wir": "My",
+      "Ihr": "Vy",
+      "Sie (Höflichkeitsform)": "Vy"
+    },
+    "Farben": {
+      "Rot": "Červená",
+      "Blau": "Modrá",
+      "Grün": "Zelená",
+      "Gelb": "Žltá",
+      "Schwarz": "Čierna",
+      "Weiß": "Biela"
+    }
+}
