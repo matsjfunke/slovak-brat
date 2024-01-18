@@ -26,9 +26,9 @@ for section in data:
 
     if interest.lower() == "y":
         learning_topic = data.get(section, {})
-        
-        random_word, translation = random.choice(list(learning_topic.items()))
+        for items in range(len(learning_topic.items())):
+            random_word, translation = random.choice(list(learning_topic.items()))
 
-        print(f"Zufälliges Wort: {random_word}")
-        user_translation = input(f"\nGebe das Wort auf slowakisch ein: ")
-        print(f"Richtig wäre: {translation} | deine Übersetzung: {user_translation}\n")
+            print(f"Zufälliges Wort: {random_word}")
+            user_translation = input(f"\nGebe das Wort auf slowakisch ein: ")
+            print(f"Richtig wäre: {translation} | deine Übersetzung: {user_translation}\n")
