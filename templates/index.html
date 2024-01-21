@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Learning</title>
+</head>
+<body>
+    <h1>Welcome to FastAPI Learning</h1>
+    <p>Choose a section to start learning:</p>
+    <form action="/learn" method="post">
+        {% for section in sections %}
+            <label>
+                <input type="radio" name="section" value="{{ section }}" required>
+                {{ section }}
+            </label>
+            <br>
+        {% endfor %}
+        <br>
+        <button type="submit">Start Learning</button>
+    </form>
+</body>
+</html>

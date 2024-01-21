@@ -1,0 +1,22 @@
+<!-- templates/learn.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Learning</title>
+</head>
+<body>
+    <h2>Learn {{ section }}</h2>
+    <p>Translate the following word to Slovak:</p>
+    <form action="/check_translation" method="post">
+        <input type="hidden" name="correct_translation" value="{{ word }}">
+        <label>
+            {{ word }}:
+            <input type="text" name="user_translation" required>
+        </label>
+        <br>
+        <button type="submit">Check Answer</button>
+    </form>
+</body>
+</html>
