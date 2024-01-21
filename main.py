@@ -1,5 +1,4 @@
-# main.py
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Request, Form, Depends, HTTPException, status
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import json
@@ -8,17 +7,14 @@ from unidecode import unidecode
 
 app = FastAPI()
 
-# Mount the "static" directory to serve static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# Set up Jinja2 templates
 templates = Jinja2Templates(directory="templates")
 
 def get_db_data():
     db_name = 'word-db.json'
     try:
         with open(db_name, 'r') as file:
-            data = json.load(file)
+            db = json.load(file)
 
     except FileNotFoundError:
         print(f"File '{db_name}' not found.")
@@ -27,7 +23,8 @@ def get_db_data():
     except Exception as e:
         print(f"Error: {e}")
     
-    return data
+    return db
+data = get_db_data()
 
 def calculate_score(translation, user_translation):
     correct_characters = list(unidecode(translation))
@@ -41,23 +38,35 @@ def calculate_score(translation, user_translation):
 
     return score, len(correct_characters)
 
-data = get_db_data()
+
 
 @app.get("/")
 def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "sections": data.keys()})
 
+
+current_translation = None
 @app.post("/learn")
 def learn_section(request: Request, section: str = Form(...)):
+    global current_translation
+
     learning_topic = data.get(section, {})
     random_word, translation = random.choice(list(learning_topic.items()))
+
+    # Store the translation in the global variable
+    current_translation = translation
 
     return templates.TemplateResponse("learn.html", {"request": request, "word": random_word, "section": section})
 
 
 @app.post("/check_translation")
-def check_translation(request: Request, user_translation: str = Form(...), correct_translation: str = Form(...)):
-    score, total_chars = calculate_score(correct_translation, user_translation)
+def check_translation(request: Request, user_translation: str = Form(...)):
+    global current_translation
+
+    if not current_translation:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No translation found")
+
+    score, total_chars = calculate_score(current_translation, user_translation)
 
     return templates.TemplateResponse("result.html", {"request": request, "user_translation": user_translation,
-                                                      "score": score, "total_chars": total_chars, "correct_translation": correct_translation})
+                                                      "score": score, "total_chars": total_chars, "correct_translation": current_translation})
