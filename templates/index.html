@@ -4,21 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <title>Slovak Brat</title>
 </head>
 <body>
-    <h1>Welcome to FastAPI Learning</h1>
-    <p>Choose a section to start learning:</p>
-    <form action="/learn" method="post">
-        {% for section in sections %}
-            <label>
-                <input type="radio" name="section" value="{{ section }}" required>
-                {{ section }}
-            </label>
+     <div class="home-text">
+        <h1>Hi, ich bin dein Slovak-Brat.</h1> 
+        <div class="brat-picture">
+            <img src="/static/brat.jpg" alt="cute nerdy student">
+        </div>           
+        <h4>Mit meiner Hilfe kannst du die Grundlagen der slowakischen Sprache erlernen.</h4> 
+    </div>
+    <div class="topic-selection">
+        <p>Wähle eines der unteren Themen aus und erweitere deinen Wortschatz:</p>
+        <form action="/learn" method="post">
+            {% for section in sections %}
+                <label>
+                    <input type="radio" name="section" value="{{ section }}" required>
+                    {{ section }}
+                </label>
+                <br>
+            {% endfor %}
             <br>
-        {% endfor %}
-        <br>
-        <button type="submit">Start Learning</button>
-    </form>
+            <button type="submit">Beginn zu lernen!</button>
+        </form>
 </body>
 </html>

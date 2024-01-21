@@ -1,10 +1,66 @@
-/* static/style.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(210deg, black 75%, rgb(91, 231, 233));
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.home-text {
+    text-align: center;
+    padding: 50px;
+    margin: 100px;
+}
+
+.home-text h1 {
+    font-size: 3.5em;
+}
+
+.home-text h4 {
+    font-size: 1.4em;
+}
+
+.brat-picture {
+    text-align: center;
+    margin: 0;
+    max-width: 100%;
+}
+
+.brat-picture img {
+    border-radius: 50%;
+    max-width: 20%;
+    height: auto;
+}
+
+.topic-selection {
+    padding: 20px;
+    margin: 20px;
     text-align: center;
 }
 
-h1 {
-    color: #007bff;
+.topic-selection p {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.topic-selection label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.topic-selection button {
+    padding: 10px;
+    font-size: 1.5em;
+    background-color: rgb(91, 231, 233);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.topic-selection button:hover {
+    background-color: rgb(36, 167, 169);
 }
