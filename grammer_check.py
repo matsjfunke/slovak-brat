@@ -24,8 +24,6 @@ def calculate_score(translation, user_translation):
     score = 0
 
     for char_a, char_b in zip(correct_characters, user_word_list):
-        print(char_a.lower())
-        print(char_b.lower())
         if char_a.lower() == char_b.lower():
             score += 1
 
@@ -39,15 +37,15 @@ print("Ahoj ich bin dein Slovak-Brat")
 print("\nMit mir kannst du slowakische Begrüßungen/Verabschiedungen, Höflichkeiten, Fragen, Antworten, Personalpronomen und Farben lernen.\n")
 
 for section in data:
-    interest = input(f"\nDrücke y wenn du {section} lernen möchtest, drücke n wenn nicht. ")
+    interest = input(f"\n\n\nDrücke y wenn du {section} lernen möchtest, drücke n wenn nicht. ")
 
     if interest.lower() == "y":
         learning_topic = data.get(section, {})
         for items in range(len(learning_topic.items())):
             random_word, translation = random.choice(list(learning_topic.items()))
 
-            user_translation = input(f"\nÜbersetze {random_word} auf slowakisch ein: ")
+            user_translation = input(f"\n\nÜbersetze {random_word} auf slowakisch ein: ")
 
             score, total_chars = calculate_score(translation, user_translation)
 
-            print(f"Deine Übersetzung: {user_translation}, richtig wäre {translation}. \n\n{score} von {total_chars} sind richtig.")
+            print(f"Deine Übersetzung: {user_translation} war zu {round(score / total_chars * 100)} % korrekt, richtig wäre {translation}. \n{score} von {total_chars} sind richtig.")
