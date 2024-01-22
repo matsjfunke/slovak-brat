@@ -64,3 +64,14 @@ body {
 .topic-selection button:hover {
     background-color: rgb(36, 167, 169);
 }
+.input-text {
+    text-align: center;
+    padding: 50px;
+    margin: 100px;
+}
+.input-text h2 {
+    font-size: 3.5em;
+}
+.input-text p {
+    font-size: 3.5em;
+}
