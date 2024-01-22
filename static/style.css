@@ -1,57 +1,55 @@
+/* style.css */
 body {
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(210deg, black 75%, rgb(91, 231, 233));
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
-    padding: 0;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.home-text {
+.container {
     text-align: center;
-    padding: 50px;
-    margin: 100px;
 }
 
-.home-text h1 {
-    font-size: 3.5em;
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-top: 50%;
+    margin-bottom: 15%;
 }
 
-.home-text h4 {
-    font-size: 1.4em;
-}
-
-.brat-picture {
-    text-align: center;
-    margin: 0;
-    max-width: 100%;
+.header-content h1 {
+    margin-left: 15%;
+    margin-right: 0; /* Remove default margin for better alignment */
 }
 
 .brat-picture img {
-    border-radius: 50%;
-    max-width: 20%;
+    max-width: 35%;
     height: auto;
+    margin-left: 0; /* Adjust the margin as needed */
 }
 
-.topic-selection {
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
+.topic-selection h4 {
+    font-size: 1.8em;
+    margin: 10%;
 }
 
 .topic-selection p {
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
 }
 
 .topic-selection label {
     font-size: 20px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
-.topic-selection button {
+.common-button {
     padding: 10px;
     font-size: 1.5em;
     background-color: rgb(91, 231, 233);
@@ -59,19 +57,9 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
-.topic-selection button:hover {
-    background-color: rgb(36, 167, 169);
-}
-.input-text {
-    text-align: center;
-    padding: 50px;
-    margin: 100px;
-}
-.input-text h2 {
-    font-size: 3.5em;
-}
-.input-text p {
-    font-size: 3.5em;
+.common-button:hover {
+    background-color: rgb(24, 149, 151);
 }

@@ -8,25 +8,29 @@
     <title>Slovak Brat</title>
 </head>
 <body>
-     <div class="home-text">
-        <h1>Hi, ich bin dein Slovak-Brat.</h1> 
-        <div class="brat-picture">
-            <img src="/static/brat.jpg" alt="cute nerdy student">
-        </div>           
-        <h4>Mit meiner Hilfe kannst du die Grundlagen der slowakischen Sprache erlernen.</h4> 
-    </div>
-    <div class="topic-selection">
-        <p>Wähle eines der unteren Themen aus und erweitere deinen Wortschatz:</p>
-        <form action="/learn" method="post">
-            {% for section in sections %}
-                <label>
-                    <input type="radio" name="section" value="{{ section }}" required>
-                    {{ section }}
-                </label>
+    <div class="container">
+        <div class="header-content">
+            <h1>Hi, ich bin dein Slovak-Brat.</h1> 
+            <div class="brat-picture">
+                <img src="/static/brat.jpg" alt="cute nerdy student">
+            </div>
+        </div>
+
+        <div class="topic-selection">
+            <h4>Mit meiner Hilfe kannst du die Grundlagen der slowakischen Sprache erlernen.</h4>
+            <p>Wähle eines der unteren Themen aus und erweitere deinen Wortschatz:</p>
+            <form action="/learn" method="post">
+                {% for section in sections %}
+                    <label>
+                        <input type="radio" name="section" value="{{ section }}" required>
+                        {{ section }}
+                    </label>
+                    <br>
+                {% endfor %}
                 <br>
-            {% endfor %}
-            <br>
-            <button type="submit">Beginn zu lernen!</button>
-        </form>
+                <button class="common-button" type="submit">Beginn zu lernen!</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -11,8 +11,7 @@
     <div class="input-text">
         <h2>Lerne slowakische {{ section }}</h2>
         <p>übersetze das folgende Wort:</p>
-    </div>
-    <div class="input-form">
+
         <form action="/check_translation" method="post">
             <input type="hidden" name="correct_translation" value="{{ word }}">
             <label>
@@ -20,7 +19,7 @@
                 <input type="text" name="user_translation" required>
             </label>
             <br>
-            <button type="submit">Check Answer</button>
+            <button class="common-button" type="submit">Check Answer</button>
         </form>
     </div>
 </body>
