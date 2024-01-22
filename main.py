@@ -1,9 +1,11 @@
-from fastapi import FastAPI, Request, Form, Depends, HTTPException, status
+from fastapi import FastAPI, Request, Form, HTTPException, status
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 import json
 import random
 from unidecode import unidecode
+
 
 app = FastAPI()
 
@@ -46,6 +48,7 @@ def read_root(request: Request):
 
 
 current_translation = None
+
 @app.post("/learn")
 def learn_section(request: Request, section: str = Form(...)):
     global current_translation
@@ -57,6 +60,18 @@ def learn_section(request: Request, section: str = Form(...)):
     current_translation = translation
 
     return templates.TemplateResponse("learn.html", {"request": request, "word": random_word, "section": section})
+
+@app.get("/learn", response_class=HTMLResponse)
+def get_learn(request: Request, section: str = Form(...)):
+    global current_translation
+
+    learning_topic = data.get(section, {})
+    random_word, translation = random.choice(list(learning_topic.items()))
+
+    # Store the translation in the global variable
+    current_translation = translation
+
+    return templates.TemplateResponse("learn.html", {"request": request, "word": random_word, "section": section}), print(section)
 
 
 @app.post("/check_translation")

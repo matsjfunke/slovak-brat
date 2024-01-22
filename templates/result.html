@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
     <title>Slovak Brat</title>
 </head>
 <body>
@@ -12,5 +13,10 @@
     <p><strong>{{ user_translation }}</strong></p>
     <p>Score: {{ score }} out of {{ total_chars }} characters are correct.</p>
     <p>Correct translation: {{ correct_translation }}</p>
+
+    <form action="/learn" method="post">
+        <input type="hidden" name="section" value="{{ section }}">
+        <button type="submit">Return to Learn</button>
+    </form>
 </body>
 </html>
