@@ -17,9 +17,9 @@ Make sure you have [Python](https://www.python.org/downloads/) installed on your
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/matsjfunke/slovak-brat.git
-   ```
+```bash
+git clone https://github.com/matsjfunke/slovak-brat.git
+```
    
 2. Change into the project directory:
 
