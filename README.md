@@ -1,6 +1,6 @@
 # FastAPI Slovak Learning App
 
-This is a simple web application built with FastAPI to help germans learning slovak. Users can choose a topic of words and phrases and translate slovak into german.
+This is a simple web application built with FastAPI to help germans learn slovak. Users can choose a topic of words and phrases and translate slovak into german.
 
 ![website home screenshot](static/web-screenshot.png)
 ## Version
