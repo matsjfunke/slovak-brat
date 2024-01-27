@@ -5,6 +5,7 @@ from fastapi.responses import HTMLResponse
 import json
 import random
 from unidecode import unidecode
+import uvicorn
 
 
 app = FastAPI()
@@ -97,6 +98,4 @@ def check_translation(request: Request, user_translation: str = Form(...)):
                                                       "section": current_section })
 
 if __name__ == "__main__":
-    import uvicorn
-
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
