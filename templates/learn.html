@@ -4,22 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='learn-style.css') }}">
     <title>Slovak Brat</title>
 </head>
 <body>
-    <div class="input-text">
-        <h2>Lerne slowakische {{ section }}</h2>
-        <p>übersetze das folgende Wort:</p>
-
-        <form action="/check_translation" method="post">
+    <div class="container">
+        <h2 class="main-heading">Lerne slowakische {{ section }}</h2>
+        <p class="instruction">übersetze das folgende:</p>
+        
+        <form action="/check_translation" method="post" class="translation-form">
             <input type="hidden" name="correct_translation" value="{{ word }}">
-            <label>
-                {{ word }}:
-                <input type="text" name="user_translation" required>
-            </label>
-            <br>
-            <button class="common-button" type="submit">Check Answer</button>
+            <div class="form-group">
+                <label class="word-label">
+                    {{ word }}
+                </label>
+                <input type="text" name="user_translation" required class="user-translation-input">
+            </div>
+            <div class="form-group">
+                <button class="common-button" type="submit">Überprüfe deine Übersetzung.</button>
+            </div>
         </form>
     </div>
 </body>
