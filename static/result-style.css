@@ -17,40 +17,27 @@ body {
     padding: 20px;
 }
 
-.main-heading {
-    font-size: 4em;
+.result-heading {
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-.instruction {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.translation-form {
+.result-details {
     max-width: 400px;
     margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 20px;
-    display: block;
-    font-size: 1.2em;
+.translation-attempt, .user-translation, .score-info, .correct-translation {
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
-.word-label {
-    font-size: 2em;
-    display: block;
-    margin-bottom: 30px;
-    margin: 30px; 
+.user-translation {
     color: rgb(91, 231, 233);
 }
 
-.user-translation-input {
-    padding: 8px;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
+.return-form {
+    margin-top: 20px;
 }
 
 .common-button {
@@ -61,7 +48,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 

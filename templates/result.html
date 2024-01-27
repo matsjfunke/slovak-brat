@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='result-style.css') }}">
     <title>Slovak Brat</title>
 </head>
 <body>
-    <h2>Result</h2>
-    <p>Your translation attempt:</p>
-    <p><strong>{{ user_translation }}</strong></p>
-    <p>Score: {{ score }} out of {{ total_chars }} characters are correct.</p>
-    <p>Correct translation: {{ correct_translation }}</p>
+    <div class="container">
+        <h2 class="result-heading">Result</h2>
+        <div class="result-details">
+            <p class="translation-attempt">Your translation attempt:</p>
+            <p class="user-translation"><strong>{{ user_translation }}</strong></p>
+            <p class="score-info">Score: {{ score }} out of {{ total_chars }} characters are correct.</p>
+            <p class="correct-translation">Correct translation: {{ correct_translation }}</p>
+        </div>
 
-    <form action="/learn" method="post">
-        <input type="hidden" name="section" value="{{ section }}">
-        <button class="common-button" type="submit">Return to Learn</button>
-    </form>
+        <form action="/learn" method="post" class="return-form">
+            <input type="hidden" name="section" value="{{ section }}">
+            <div class="form-group">
+                <button class="common-button" type="submit">Übersetze weitere {{ section }}</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
